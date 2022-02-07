@@ -68,7 +68,7 @@ const generateWebPage = function(data) {
         if (employeeType === 'Manager') {
             let deptNum = employee.getDeptNum();
             let symbol = `<h3><i class="fas fa-mug-hot"></i> Manager</h3>`;
-            let deptNumP = `<p>Office Number: ${deptNum}</p>`
+            let deptNumP = `<p>Department Number: ${deptNum}</p>`
             const managerSection = createEmployee(name, id, email, deptNumP, symbol);
             teamMembersFull.push(managerSection);
 

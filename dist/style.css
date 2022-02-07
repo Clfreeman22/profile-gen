@@ -1,0 +1,46 @@
+header {
+    background-color: rgb(211, 58, 58);
+    color: rgb(255, 255, 255);
+    height: 100px;
+}
+.employee-list {
+    justify-content: space-between;
+}
+
+.employee {
+    border-radius: 5px;
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 0px;
+    width: 300px;
+}
+
+.name-role {
+    background-color:rgb(49, 162, 255);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: rgb(255, 255, 255);
+    padding: 10px 0;
+}
+
+.name-role h3 {
+    padding: 0 0 0 15px;
+}
+
+.employee-info {
+    padding: 15px 10px;
+    background-color: rgb(231, 231, 231)
+}
+
+.info-box {
+    padding: 5px 15px;
+    border: solid 1px rgb(146, 146, 146);
+    background-color: rgb(255, 255, 255)
+}
+
+.info-box p {
+    margin: 0;
+}
