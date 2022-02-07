@@ -201,6 +201,23 @@ const anotherEmployeeQuestions = () => {
     })
 };
 
+function writeToFile(teamMembers) {
+
+    const content = generateWebPage(teamMembers);
+    fs.writeFile('./dist/index.html', content, err => {
+        if (err) {
+            console.error(err)
+            return
+        };
+        console.log(`
+            YAY IT WORKED!!!
+        Check the dist folder for
+        your prize.
+        `)
+    })
+}
+
+
 function init() {
     managerQuestions()
 }
