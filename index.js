@@ -37,7 +37,6 @@ const managerQuestions = () => {
 
 const employeeTypeQuestions = () => {
     inquirer.prompt([
-    // Employee type
         {
             type: 'list',
             name: 'role',
@@ -60,9 +59,59 @@ const employeeTypeQuestions = () => {
     })
 }
 
+const engineerQuestions = () => {
+    console.log(`
+        Input Engineer Information
+    `);
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'ghUsername',
+            message: "What is the Engineer's GitHub username?",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter this employees GitHub username!');
+                }
+            }
+        }
+    ])
+    .then(engineerData => {
+        let { ghUsername } = engineerData;
+        let role = 'Engineer';
+        employeeQuestions(role, ghUsername);
+    })
+};
+
+// Questions for Interns
+const internQuestions = () => {
+    console.log(`
+        Input Intern Information
+    `);
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'school',
+            message: "What is the name of the Intern's school?",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter name of this Employees school!');
+                }
+            }
+        }
+    ])
+    .then(internData => {
+        let { school } = internData;
+        let role = 'Intern';
+        employeeQuestions(role, school);
+    })
+};
+
 const employeeQuestions = (value1, value2) => {
     inquirer.prompt([
-    // Employee Name
         {
             type: 'input',
             name: 'name',
@@ -75,7 +124,6 @@ const employeeQuestions = (value1, value2) => {
                 }
             }
         },
-        // Employee ID #
         {
             type: 'input',
             name: 'id',
@@ -89,7 +137,6 @@ const employeeQuestions = (value1, value2) => {
                 }
             }
         }, 
-        // Employee Email Address
         {
             type: 'input', 
             name: 'email',
@@ -104,7 +151,6 @@ const employeeQuestions = (value1, value2) => {
         }
     ])
     .then(employeeData => {
-        // Creates new Manager, Engineer, Intern based on role
         if (value1 === 'Manager') {
             let officeNum = value2;
             let {name, id, email } = employeeData;
